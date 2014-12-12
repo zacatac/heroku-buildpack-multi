@@ -49,7 +49,8 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     ls -al /tmp/
     echo "-----> echo /tmp/$1 dir"
     ls -al $1
-
+    echo "-----> echo $dir/bin/detect $1"
+    $dir/bin/detect $1
     framework=$($dir/bin/detect $1)
     echo "-----> Framework detected"
     if [ $? == 0 ]; then
