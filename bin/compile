@@ -38,12 +38,14 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     if [ "$branch" != "" ]; then
       git checkout $branch >/dev/null 2>&1
     fi
-
+    echo "-----> Checked out a branch"
     # we'll get errors later if these are needed and don't exist
-    chmod -f +x $dir/bin/{detect,compile,release} || true
+    # turned off error suppression (-f)
+    chmod +x $dir/bin/{detect,compile,release} || true
+    echo "-----> All files executable"
 
     framework=$($dir/bin/detect $1)
-
+    echo "-----> Framework detected"
     if [ $? == 0 ]; then
       echo "=====> Detected Framework: $framework"
       $dir/bin/compile $1 $2 $3
