@@ -35,6 +35,8 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     echo "-----> Completed download"
     cd $dir
     echo "-----> Changed a directory $dir"
+    echo "-----> Contents of Buildpack"
+    ls -al ./
 
     if [ "$branch" != "" ]; then
       git checkout $branch >/dev/null 2>&1
