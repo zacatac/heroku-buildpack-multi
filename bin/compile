@@ -44,7 +44,8 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     # turned off error suppression (-f)
     chmod +x $dir/bin/{detect,compile,release} || true
     echo "-----> All files executable"
-
+    echo "-----> echo $1"
+    echo $1
     framework=$($dir/bin/detect $1)
     echo "-----> Framework detected"
     if [ $? == 0 ]; then
