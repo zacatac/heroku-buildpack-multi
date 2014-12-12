@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "-----> Begin detecting framework"
+echo "-----> Begin detecting framework in ddollar/detect"
 if [ -f $1/.buildpacks ]; then
   echo "Multipack"
   exit 0
