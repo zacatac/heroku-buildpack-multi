@@ -46,7 +46,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     echo "-----> All files executable"
     echo "-----> echo buildpack dir $1"
     echo "-----> echo /tmp dir"
-    echo ls -al /tmp/
+    ls -al /tmp/
     framework=$($dir/bin/detect $1)
     echo "-----> Framework detected"
     if [ $? == 0 ]; then
