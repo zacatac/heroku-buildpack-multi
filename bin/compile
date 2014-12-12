@@ -32,6 +32,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     else
       git clone $url $dir >/dev/null 2>&1
     fi
+    echo "-----> Completed download"
     cd $dir
 
     if [ "$branch" != "" ]; then
